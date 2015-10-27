@@ -10,7 +10,7 @@ class User(Base):
 
   id = Column(Integer, primary_key=True)
   name = Column(String(250), nullable=False)
-  email = Column(String(250), primary_key=True, nullable=False)
+  email = Column(String(250), unique=True, nullable=False)
   picture = Column(String(250))
 
 
@@ -57,7 +57,7 @@ class MenuItem(Base):
 
 
 
-engine = create_engine('sqlite:///restaurantmenuwithusers.db')
+engine = create_engine('postgres://luqjhiocljctha:KD42kXmgujk7EVETt2VYp33oP0@ec2-107-21-219-142.compute-1.amazonaws.com:5432/d3kalufc5sjllt')
  
 
 Base.metadata.create_all(engine)
